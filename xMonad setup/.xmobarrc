@@ -1,0 +1,20 @@
+Config { bgColor = "black"
+       , fgColor = "grey"
+       , position = Top
+--       , hideOnStart = False
+       , commands = [ Run Weather "YMEN" ["-t","<station>: <tempC>c"] 36000
+                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
+                    , Run Cpu ["-t","Cpu: <total>","-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Com "uname" ["-m","-r"] "" 36000
+                    , Run Date "%A %_d/%m/%Y %_I:%M:%S%p" "date" 10
+                    , Run StdinReader
+                    , Run Com "~/.volume.sh" ["",""] "custom" 10
+                    , Run Com "~/.db-status.sh"  ["",""] "db" 100
+--                    , Run Locks
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% } <fc=#FF0000>%date%</fc> { | %cpu% | %memory% | %eth0% | %YMEN% | Vol: %custom% | DB: %db%"
+       }
