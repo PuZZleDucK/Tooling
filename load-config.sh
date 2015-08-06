@@ -33,13 +33,13 @@ cp "home/.db-status.sh" ~/
 cp "home/.volume.sh" ~/
 cp "home/.xmobarrc" ~/
 cp "home/.xmobarrc2" ~/
-if [ -d "~/.xmonad" ] ; then
+if [ -d "$HOME/.xmonad" ] ; then
   echo "Found old .xmonad dir."
 else
-  mkdir "$HOME/.xmonad"
+  mkdir "$HOME/.xmonad/"
   echo "Generated .xmonad dir."
 fi
-cp "home/.xmonad/xmonad.hs" ~/.xmonad/
+cp "home/.xmonad/xmonad.hs" "$HOME/.xmonad/"
 
 
 
