@@ -1,6 +1,5 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
-
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
@@ -11,12 +10,12 @@ import System.IO
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
 --   =<< statusBar myBarToo myPP toggleStrutsKey myConfig
 
-myBar = "xmobar"
+myBar = "xmobar ~/.xmobarrc"
 myBarToo = "xmobar ~/.xmobarrc2"
 
 -- Custom PP, configure it as you like. It determines what is being written to the bar.
 myPP = xmobarPP { ppCurrent = xmobarColor "green" "" . wrap "|" "|"
-                , ppTitle = xmobarColor "green" "" . shorten 150
+                , ppTitle = xmobarColor "yellow" "" . shorten 150
                 }
 
 -- Key binding to toggle the gap for the bar.
@@ -24,11 +23,12 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myConfig = defaultConfig { 
 --          modMask = mod4Mask --i've gotten used to <alt>
-          terminal = "gnome-terminal"
+        workspaces = ["1_email","2_","3_","4_","5_code","6_","7_","8_","9_media","0_","-_","=_"]
+        , terminal = "gnome-terminal"
         , borderWidth = 3
-        , manageHook = manageDocks <+> manageHook defaultConfig
+        , manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
-} `additionalKeys`
+  } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((0, xK_Print), spawn "scrot")
@@ -38,6 +38,9 @@ myConfig = defaultConfig {
 
 
 
+myManageHook = composeAll . concat $
+   [ [ className =? "Firefox" --> doShift "1_email" ]
+   ]
 
 
 --main = xmonad defaultConfig
