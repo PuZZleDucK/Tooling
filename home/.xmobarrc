@@ -10,8 +10,8 @@ Config { bgColor = "black"
                     , Run Com "uname" ["-m","-r"] "" 36000
                     , Run Date "%A %_d/%m/%Y %_I:%M:%S%p" "date" 10
                     , Run StdinReader
-                    , Run Com "~/.volume.sh" ["",""] "custom" 10
-                    , Run Com "~/.db-status.sh"  ["",""] "db" 100
+                    , Run Com "/bin/bash" ["-c", "~/.volume.sh"] "custom" 10
+                    , Run Com "/bin/bash" ["-c", "~/.db-status.sh"] "db" 100
 --                    , Run Locks
                     ]
        , sepChar = "%"

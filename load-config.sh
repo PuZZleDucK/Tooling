@@ -29,11 +29,11 @@ fi
 cd "$HOME/x/Tooling"
 
 # Xmonad
-cp "home/.db-status.sh" ~
-cp "home/.volume.sh" ~
-cp "home/.xmobarrc" ~
-cp "home/.xmobarrc2" ~
-if [ -d "$HOME/.xmonad" ]; then
+cp "home/.db-status.sh" ~/
+cp "home/.volume.sh" ~/
+cp "home/.xmobarrc" ~/
+cp "home/.xmobarrc2" ~/
+if [ -d "~/.xmonad" ] ; then
   echo "Found old .xmonad dir."
 else
   mkdir "$HOME/.xmonad"
