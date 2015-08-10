@@ -4,11 +4,10 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
-
+import Control.Monad (liftM2)
 
 -- The main function.
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
---   =<< statusBar myBarToo myPP toggleStrutsKey myConfig
 
 myBar = "xmobar ~/.xmobarrc"
 myBarToo = "xmobar ~/.xmobarrc2"
@@ -26,10 +25,10 @@ myConfig = defaultConfig {
         workspaces = ["1_email","2_","3_","4_","5_code","6_","7_","8_","9_media","0_","-_","=_"]
         , terminal = "gnome-terminal"
         , borderWidth = 3
-        , manageHook = manageDocks <+> myManageHook <+> manageHook defaultConfig
+        , manageHook = myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
   } `additionalKeys`
-        [ ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock")
+        [ ((mod4Mask .|. mod1Mask, xK_l), spawn "xscreensaver-command -lock")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((0, xK_Print), spawn "scrot")
         , ((mod1Mask, xK_v), spawn "amixer set Master 5%-")
@@ -38,42 +37,10 @@ myConfig = defaultConfig {
 
 
 
-myManageHook = composeAll . concat $
-   [ [ className =? "Firefox" --> doShift "1_email" ]
+myManageHook = composeAll
+   [ className =? "Firefox" --> doShift "1_email"
+     , className =? "vlc" --> doShift "9_media"
+     , className =? "nemo" --> doShift "5_code"
+     , manageDocks
    ]
-
-
---main = xmonad defaultConfig
---        { 
-        -- modMask = mod4Mask -- Use Super instead of Alt
---          terminal = "gnome-terminal"
-        -- more changes
---        myBorderWidth = 1
---        , borderWidth = 3
---        }
-
-
---import XMonad
---import XMonad.Hooks.DynamicLog
---import XMonad.Hooks.ManageDocks
---import XMonad.Hooks.ManageHelpers
---import XMonad.Layout.NoBorders
---import XMonad.Layout.Gaps
---import XMonad.Util.Run(spawnPipe)
---import XMonad.Util.EZConfig(additionalKeys)
---import System.IO
-
-
---main = do
---  xmproc <- spawnPipe "/usr/bin/xmobar /home/timo/.xmonad/xmobarrc"
---  xmonad defaultConfig {
---    modMask = mod4Mask, 
---    terminal = "urxvt",
---    manageHook = manageDocks <+> manageHook defaultConfig,
---    layoutHook = avoidStruts $ layoutHook defaultConfig,
---    logHook = dynamicLogWithPP $ xmobarPP
---                        { ppOutput = hPutStrLn xmproc,
---                          ppTitle = xmobarColor "green" "" . shorten 50
---                        }
---  }
 
