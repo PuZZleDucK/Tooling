@@ -32,6 +32,7 @@ conky
 john
 htop
 lolcat
+xscreensaver
 
 --development & embedded
 arduino-core
