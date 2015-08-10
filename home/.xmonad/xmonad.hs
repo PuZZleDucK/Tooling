@@ -13,7 +13,7 @@ myBar = "xmobar ~/.xmobarrc"
 myBarToo = "xmobar ~/.xmobarrc2"
 
 -- Custom PP, configure it as you like. It determines what is being written to the bar.
-myPP = xmobarPP { ppCurrent = xmobarColor "green" "" . wrap "|" "|"
+myPP = xmobarPP { ppCurrent = xmobarColor "yellow" "" . wrap "|" "|"
                 , ppTitle = xmobarColor "yellow" "" . shorten 150
                 }
 
@@ -24,8 +24,8 @@ myConfig = defaultConfig {
           modMask = mod4Mask --i've gotten used to <alt>
         , workspaces = ["1_email","2_","3_","4_","5_code","6_","7_","8_","9_media","0_","-_","=_"]
         , terminal = "gnome-terminal"
-        , borderWidth = 3
-        , focusedBorderColor = "green"
+        , borderWidth = 2
+        , focusedBorderColor = "yellow"
         , manageHook = myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
   } `additionalKeys`

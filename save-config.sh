@@ -28,10 +28,12 @@ cp "$HOME/.xmonad/xmonad.hs" "$HOME/x/Tooling/home/.xmonad/"
 
 
 # Commit update
-echo "commit... TODO"
+pushd "$HOME/x/Tooling"
+ git add -A
+ git commit -m "hardcoded git save"
 
 # Push update
-echo "push... TODO"
-
+ echo "push..."
+popd
 
 
