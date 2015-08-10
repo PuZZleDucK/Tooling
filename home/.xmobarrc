@@ -16,5 +16,5 @@ Config { bgColor = "black"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% } <fc=#FF0000>%date%</fc> { | %cpu% | %memory% | %eth0% | %YMEN% | Vol: %custom% | DB: %db%"
+       , template = "%StdinReader% } <fc=#FFFF00>%date%</fc> { | %cpu% | %memory% | %eth0% | %YMEN% | Vol: %custom% | DB: %db%"
        }
