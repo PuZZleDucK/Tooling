@@ -24,7 +24,7 @@ myConfig = defaultConfig {
           modMask = mod4Mask --i've gotten used to <alt>
         , workspaces = ["1_email","2_","3_","4_","5_code","6_","7_","8_","9_media","0_","-_","=_"]
         , terminal = "gnome-terminal"
-        , borderWidth = 2
+        , borderWidth = 3
         , focusedBorderColor = "yellow"
         , manageHook = myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig

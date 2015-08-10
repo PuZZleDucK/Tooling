@@ -26,11 +26,12 @@ cp "$HOME/.xmobarrc2" "$HOME/x/Tooling/home/"
 cp "$HOME/.xmonad/xmonad.hs" "$HOME/x/Tooling/home/.xmonad/"
 
 
-
+LOG = $@
+echo "LOG: $LOG :GOL"
 # Commit update
 pushd "$HOME/x/Tooling"
  git add -A
- git commit -m "hardcoded git save"
+ git commit -m "SAVE:$LOG"
 
 # Push update
  echo "push..."
