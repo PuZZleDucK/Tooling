@@ -26,7 +26,7 @@ cp "$HOME/.xmobarrc2" "$HOME/x/Tooling/home/"
 cp "$HOME/.xmonad/xmonad.hs" "$HOME/x/Tooling/home/.xmonad/"
 
 
-LOG = $@
+LOG=$@
 echo "LOG: $LOG :GOL"
 # Commit update
 pushd "$HOME/x/Tooling"
