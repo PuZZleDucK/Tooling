@@ -21,8 +21,8 @@ myPP = xmobarPP { ppCurrent = xmobarColor "green" "" . wrap "|" "|"
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myConfig = defaultConfig { 
---          modMask = mod4Mask --i've gotten used to <alt>
-        workspaces = ["1_email","2_","3_","4_","5_code","6_","7_","8_","9_media","0_","-_","=_"]
+          modMask = mod4Mask --i've gotten used to <alt>
+        , workspaces = ["1_email","2_","3_","4_","5_code","6_","7_","8_","9_media","0_","-_","=_"]
         , terminal = "gnome-terminal"
         , borderWidth = 3
         , focusedBorderColor = "green"
