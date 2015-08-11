@@ -12,12 +12,17 @@ import System.Posix.Unistd
 main = do
   hostName <- fmap nodeName getSystemID
   xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
+  xmonad =<< statusBar myBarToo myPPToo toggleStrutsKey myConfig
 
 myBar = "xmobar ~/.xmobarrc"
 myBarToo = "xmobar ~/.xmobarrc2"
 
 -- Custom PP, configure it as you like. It determines what is being written to the bar.
 myPP = xmobarPP { ppCurrent = xmobarColor "yellow" "" . wrap "|" "|"
+                , ppTitle = xmobarColor "yellow" "" . shorten 150
+                , ppSep = "<fc=#00FF00> | </fc>"
+                }
+myPPToo = xmobarPP { ppCurrent = xmobarColor "yellow" "" . wrap "|" "|"
                 , ppTitle = xmobarColor "yellow" "" . shorten 150
                 , ppSep = "<fc=#00FF00> | </fc>"
                 }

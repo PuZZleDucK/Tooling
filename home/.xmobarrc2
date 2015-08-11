@@ -1,4 +1,4 @@
-Config { bgColor = "black"
+Config { bgColor = "green"
        , fgColor = "grey"
        , position = Bottom
 --       , hideOnStart = False
