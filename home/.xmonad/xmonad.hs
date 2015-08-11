@@ -43,8 +43,8 @@ myConfig = defaultConfig {
         [ ((mod4Mask .|. mod1Mask, xK_l), spawn "xscreensaver-command -lock")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
         , ((0, xK_Print), spawn "scrot")
-        , ((mod1Mask, xK_v), spawn "amixer set Master 5%-")
-        , ((mod1Mask .|. shiftMask, xK_v), spawn "amixer set Master 5%+")
+        , ((mod4Mask, xK_v), spawn "amixer set Master 5%-")
+        , ((mod4Mask .|. shiftMask, xK_v), spawn "amixer set Master 5%+")
 --        , ((mod4Mask, xK_Right), moveTo Next (WSIs notSP))
 --        , ((mod4Mask, xK_Left), moveTo Prev (WSIs notSP))
         ]
