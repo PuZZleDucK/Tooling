@@ -1,11 +1,10 @@
 
-
---bluetooth
+#bluetooth
 bluez-alsa
 bluetooth
 bluez
 
---terminal tools
+#terminal tools
 espeak
 links
 lynx
@@ -34,7 +33,7 @@ htop
 lolcat
 xscreensaver
 
---development & embedded
+#development & embedded
 arduino-core
 arduino-mk
 pi4j
@@ -59,7 +58,7 @@ netbeans
 arduino
 valgrind
 
---guis
+#guis
 gnucash
 nautilus-open-terminal
 clamav
@@ -93,31 +92,32 @@ geany-plugin-sendmail
 geany-plugin-common
 geany-plugin-webhelper
 
---media
+#media
 gstreamer0.10-plugins-ugly
 gnuplot
 audacity
 clementine
 gource
 
---virtualization
+#virtualization
 qtemu
 qemu
 virtualbox
 qemu-utils
 virtualbox-guest-source
 
---compression
+#compression
 unzip
 p7zip
 p7zip-full
 gzip
 zip
 
---networking
+#networking
 vidalia
 mtp-tools
 filezilla
 tor
-iceweasel/firefox
+iceweasel
+firefox
 
