@@ -5,9 +5,13 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 import Control.Monad (liftM2)
+import qualified XMonad.StackSet as W
+import System.Posix.Unistd
 
 -- The main function.
-main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
+main = do
+  hostName <- fmap nodeName getSystemID
+  xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
 
 myBar = "xmobar ~/.xmobarrc"
 myBarToo = "xmobar ~/.xmobarrc2"
@@ -36,6 +40,8 @@ myConfig = defaultConfig {
         , ((0, xK_Print), spawn "scrot")
         , ((mod1Mask, xK_v), spawn "amixer set Master 5%-")
         , ((mod1Mask .|. shiftMask, xK_v), spawn "amixer set Master 5%+")
+--        , ((mod4Mask, xK_Right), moveTo Next (WSIs notSP))
+--        , ((mod4Mask, xK_Left), moveTo Prev (WSIs notSP))
         ]
 
 
@@ -47,4 +53,8 @@ myManageHook = composeAll
      , className =? "Screenkey" --> doIgnore
      , manageDocks
    ]
+
+-- notSP = (return $ ("SP" /=) . W.tag) :: X (WindowSpace -> Bool)
+
+
 
