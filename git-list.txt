@@ -1,0 +1,7 @@
+https://github.com/PuZZleDucK/Tooling.git
+https://github.com/PuZZleDucK/melb-maker-map.git
+https://github.com/PuZZleDucK/XorElse.git
+https://github.com/PuZZleDucK/Hls.git
+https://github.com/PuZZleDucK/Resume.git
+https://github.com/RHoKAustralia/melb-maker-map.git
+https://github.com/ThreeLetterNames/GovHack2015.git
