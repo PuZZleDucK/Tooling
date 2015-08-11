@@ -11,10 +11,8 @@ echo ""
 read -p "<ctrl>-c to cancel, enter to proceed..."
 
 if [ -d "$HOME/x" ]; then
-  echo "Dir"
   echo "# Load config found x directory: $HOME/x" | tee "$HOME/x/log.md"
 else
-  echo "nodir"
   mkdir "$HOME/x"
   echo "# Load: Installing x directory: $HOME/x" | tee "$HOME/x/log.md"
 fi
@@ -22,7 +20,8 @@ fi
 # Clone toolset or update
 if [ -d "$HOME/x/Tooling" ]; then
   cd "$HOME/x/Tooling"
-  echo "pull from origin... TODO"
+  echo "Updating config"
+  git pull origin master
 else
   git clone $GIT_REPO
 fi
