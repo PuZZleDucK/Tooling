@@ -32,6 +32,8 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myStartup :: X ()
 myStartup = do
+--  host <- fmap nodeName getSystemID
+  spawn ("notify-send notify test")
   return ()
 
 myConfig = defaultConfig { 
