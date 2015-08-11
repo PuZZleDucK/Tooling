@@ -33,7 +33,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 myStartup :: X ()
 myStartup = do
 --  host <- fmap nodeName getSystemID
-  spawn ("notify-send notify test")
+  spawn ("notify-send 'Warning' 'config in progress'") -- no unicode ⚠
   return ()
 
 myConfig = defaultConfig { 
@@ -61,7 +61,7 @@ myConfig = defaultConfig {
 myManageHook = composeAll
    [ className =? "Firefox" --> doShift "1_ff"
      , className =? "Vlc" --> doShift "9_vlc"
-     , className =? "Nemo" --> doShift "5_code"
+--     , className =? "Nemo" --> doShift "5_code"
      , className =? "Screenkey" --> doIgnore
      , manageDocks
    ]
