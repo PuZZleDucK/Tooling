@@ -42,8 +42,9 @@ myConfig = defaultConfig {
 
 myManageHook = composeAll
    [ className =? "Firefox" --> doShift "1_ff"
-     , className =? "vlc" --> doShift "9_vlc"
-     , className =? "nemo" --> doShift "5_code"
+     , className =? "Vlc" --> doShift "9_vlc"
+     , className =? "Nemo" --> doShift "5_code"
+     , className =? "Screenkey" --> doIgnore
      , manageDocks
    ]
 
