@@ -30,6 +30,10 @@ myPPToo = xmobarPP { ppCurrent = xmobarColor "yellow" "" . wrap "|" "|"
 -- Key binding to toggle the gap for the bar.
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
+myStartup :: X ()
+myStartup = do
+  return ()
+
 myConfig = defaultConfig { 
           modMask = mod4Mask
         , workspaces = ["1_ff","2_","3_work","4_over","5_code","6_","7_","8_","9_vlc","0_","-_","=_"]
@@ -39,6 +43,7 @@ myConfig = defaultConfig {
         , normalBorderColor = "#444400"
         , manageHook = myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , startupHook = myStartup
   } `additionalKeys`
         [ ((mod4Mask .|. mod1Mask, xK_l), spawn "xscreensaver-command -lock")
         , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
