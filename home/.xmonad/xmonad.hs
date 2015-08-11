@@ -49,7 +49,7 @@ myStartup = do
 logHook' h1 h2 = dynamicLogWithPP myPP { ppOutput = hPutStrLn h1 }
               >> dynamicLogWithPP myPP { ppOutput = hPutStrLn h2 }
 
-mylayoutHook = tiled ||| Mirror tiled ||| tabbed shrinkText defaultTheme ||| Full ||| Circle ||| Column 1.6 ||| Grid ||| spiral (1/7)
+mylayoutHook = tiled ||| Mirror tiled ||| tabbed shrinkText defaultTheme ||| Full ||| Circle ||| Column 1.6 ||| Grid ||| spiral (4/3)
   where
      tiled   = Tall nmaster delta ratio
      nmaster = 1
