@@ -87,7 +87,7 @@ geany-plugin-addons
 geany-plugin-commander
 geany-plugin-devhelp
 geany-plugin-macro
-geany-plugin-macro
+geany-plugin-markdown
 geany-plugin-sendmail
 geany-plugin-common
 geany-plugin-webhelper
