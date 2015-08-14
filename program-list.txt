@@ -50,6 +50,12 @@ xmonad
 xmobar
 cabal-install
 ghc
+libghc-hmatrix-dev
+libghc-hmatrix-prof
+libghc-hmatrix-doc
+libghc-numeric-quest-dev
+libghc-numeric-quest-doc
+libghc-numeric-quest-prof
 r-base-core
 gem
 git
