@@ -32,6 +32,12 @@ john
 htop
 lolcat
 xscreensaver
+pandoc
+texlive-latex-recommended
+texlive-xetex
+texlive-luatex
+pandoc-citeproc etoolbox
+entr
 
 #development & embedded
 arduino-core
@@ -57,6 +63,13 @@ eclipse
 netbeans
 arduino
 valgrind
+ubuntu-make
+openjdk-8-jre
+android-tools-adb
+android-tools-adbd
+android-tools-fastboot
+android-tools-fsutils
+spring
 
 #guis
 gnucash
@@ -91,6 +104,9 @@ geany-plugin-markdown
 geany-plugin-sendmail
 geany-plugin-common
 geany-plugin-webhelper
+nemo
+psensor
+openshot
 
 #media
 gstreamer0.10-plugins-ugly
@@ -98,6 +114,7 @@ gnuplot
 audacity
 clementine
 gource
+adobe-flashplugin
 
 #virtualization
 qtemu
@@ -105,6 +122,8 @@ qemu
 virtualbox
 qemu-utils
 virtualbox-guest-source
+docker.io
+vagrant
 
 #compression
 unzip
@@ -120,4 +139,10 @@ filezilla
 tor
 iceweasel
 firefox
+chromium-browser
+chromium-chromedriver
+mumble
+
+#games
+steam
 
