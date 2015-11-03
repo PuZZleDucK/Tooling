@@ -4,7 +4,7 @@ bluez-alsa
 bluetooth
 bluez
 
-#terminal tools
+#terminal_tools
 espeak
 links
 lynx
@@ -39,8 +39,10 @@ texlive-luatex
 pandoc-citeproc etoolbox
 entr
 tmux
+ddate
+fortune-mod
 
-#development & embedded
+#development_&_embedded
 arduino-core
 arduino-mk
 pi4j
