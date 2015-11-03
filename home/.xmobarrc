@@ -1,7 +1,6 @@
-Config { bgColor = "black"
-       , fgColor = "grey"
+Config { bgColor = "#000000"
+       , fgColor = "#AAAAAA"
        , position = Top
---       , hideOnStart = False
        , commands = [ Run Weather "YMEN" ["-t","<station>: <tempC>c"] 36000
                     , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
                     , Run Cpu ["-t","Cpu: <total>","-L","3","-H","50","--normal","green","--high","red"] 10
