@@ -38,6 +38,7 @@ texlive-xetex
 texlive-luatex
 pandoc-citeproc etoolbox
 entr
+tmux
 
 #development & embedded
 arduino-core
