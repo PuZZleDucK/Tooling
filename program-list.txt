@@ -41,6 +41,8 @@ entr
 tmux
 ddate
 fortune-mod
+toilet
+boxes
 
 #development_&_embedded
 arduino-core
