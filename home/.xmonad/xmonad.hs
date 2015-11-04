@@ -42,6 +42,7 @@ myPP = xmobarPP { ppCurrent = xmobarColor "yellow" "" . wrap "|" "|"
 myPPtoo = xmobarPP { ppCurrent = xmobarColor "yellow" "" . wrap "|" "|"
                    , ppTitle = xmobarColor "yellow" "" . shorten 150
                    , ppSep = "<fc=#00FF00> | </fc>"
+                   , ppOutput = \s -> return () -- allow no stdin pipe
                    }
 
 myStartup :: X ()
