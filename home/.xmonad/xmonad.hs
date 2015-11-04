@@ -23,22 +23,26 @@ import XMonad.Layout.Spiral
 -- The main function.
 main = do
   hostName <- fmap nodeName getSystemID
-  h1 <- spawnPipe "xmobar ~/.xmobarrc -x 0"
-  h2 <- spawnPipe "xmobar ~/.xmobarrc2 -x 1"
+  let myBar = "xmobar ~/.xmobarrc -x 0"
+      myBarToo = "xmobar ~/.xmobarrc2 -x 1"
+  h1 <- spawnPipe myBar
+  h2 <- spawnPipe myBarToo
 --  xmonad =<< statusBar myBar myPP toggleStrutsKey $ myConfig h2
 --  xmonad =<< statusBar myBarToo myPPToo toggleStrutsKey myConfig
   xmonad $ withUrgencyHookC FocusHook urgentConfig $ myConfig h1 h2
 
 urgentConfig = UrgencyConfig { suppressWhen = Focused, remindWhen = Dont }
 
---myBar = "xmobar ~/.xmobarrc"
---myBarToo = "xmobar ~/.xmobarrc2"
 
 -- Custom PP, configure it as you like. It determines what is being written to the bar.
 myPP = xmobarPP { ppCurrent = xmobarColor "yellow" "" . wrap "|" "|"
                 , ppTitle = xmobarColor "yellow" "" . shorten 150
                 , ppSep = "<fc=#00FF00> | </fc>"
                 }
+myPPtoo = xmobarPP { ppCurrent = xmobarColor "yellow" "" . wrap "|" "|"
+                   , ppTitle = xmobarColor "yellow" "" . shorten 150
+                   , ppSep = "<fc=#00FF00> | </fc>"
+                   }
 
 myStartup :: X ()
 myStartup = do
@@ -47,7 +51,7 @@ myStartup = do
   return ()
 
 logHook' h1 h2 = dynamicLogWithPP myPP { ppOutput = hPutStrLn h1 }
-              >> dynamicLogWithPP myPP { ppOutput = hPutStrLn h2 }
+              >> dynamicLogWithPP myPPtoo { ppOutput = hPutStrLn h2 }
 
 mylayoutHook = tiled ||| Mirror tiled ||| tabbed shrinkText defaultTheme ||| Full ||| Circle ||| Column 1.6 ||| Grid ||| spiral (4/3)
   where
@@ -62,8 +66,8 @@ myConfig m1 m2 = defaultConfig {
         , workspaces = ["1_ff","2_","3_work","4_over","5_code","6_","7_","8_","9_vlc","0_","-_","=_"]
         , terminal = "gnome-terminal"
         , borderWidth = 3
-        , focusedBorderColor = "#FFFF00"
-        , normalBorderColor = "#444400"
+        , focusedBorderColor = "#DD00FF"
+        , normalBorderColor = "#220055"
         , manageHook = myManageHook <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig {layoutHook = mylayoutHook }
         , startupHook = myStartup
@@ -84,6 +88,7 @@ myConfig m1 m2 = defaultConfig {
 myManageHook = composeAll
    [ className =? "Firefox" --> doShift "1_ff"
      , className =? "Vlc" --> doShift "9_vlc"
+     , className =? "Camorama" --> doShift "8_"
 --     , className =? "Nemo" --> doShift "5_code"
      , className =? "Screenkey" --> doIgnore
      , manageDocks
