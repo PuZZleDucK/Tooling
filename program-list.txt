@@ -81,6 +81,8 @@ android-tools-adbd
 android-tools-fastboot
 android-tools-fsutils
 spring
+npm
+mocha
 
 #guis
 gnucash
