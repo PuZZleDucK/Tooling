@@ -155,6 +155,7 @@ firefox
 chromium-browser
 chromium-chromedriver
 mumble
+nmap
 
 #games
 steam
