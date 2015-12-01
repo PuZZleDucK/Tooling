@@ -83,6 +83,8 @@ android-tools-fsutils
 spring
 libsqlite3-dev
 sqlitebrowser
+npm
+mocha
 
 #guis
 gnucash

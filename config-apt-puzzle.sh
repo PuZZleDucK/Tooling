@@ -1,9 +1,28 @@
 #!/bin/bash
 
+
+function isColor {
+    lol=`which lolcat`;
+    if [[ $lol ]] ; then
+	return 0;
+    else
+	return 1;
+    fi    
+}
+
 function title {
-  echo -e "\n#############################"
-  echo -e "# Category: ${1:1}"
-  echo -e "#############################"
+    r=$(( RANDOM % 500 ));
+    if isColor ; then
+	echo -e "\n#############################" | lolcat --seed $r ;
+	echo -e "# Category: ${1:1}" | lolcat --seed ${r+1} ;
+	echo -e "#############################" | lolcat --seed ${r+2} ;
+    else
+	echo -e "\n#############################"
+	echo -e "# Category: ${1:1}"
+	echo -e "#############################"
+    fi
+  
+  
 }
 
 function install {
