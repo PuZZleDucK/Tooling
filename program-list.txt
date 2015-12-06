@@ -81,6 +81,8 @@ android-tools-adbd
 android-tools-fastboot
 android-tools-fsutils
 spring
+libsqlite3-dev
+sqlitebrowser
 npm
 mocha
 
