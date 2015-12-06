@@ -84,6 +84,38 @@ spring
 npm
 mocha
 
+#AOSP build
+gnupg
+flex
+bison
+gperf
+build-essential
+zip
+curl
+libc6-dev
+libncurses5-dev:i386
+x11proto-core-dev
+libx11-dev:i386
+libreadline6-dev:i386
+libgl1-mesa-glx:i386
+libgl1-mesa-dev
+g++-multilib
+mingw32-binutils
+mingw-w64
+openjdk-6-jdk
+tofrodos
+python-markdown
+libxml2-utils
+xsltproc
+zlib1g-dev:i386
+ccache
+lib32ncurses5
+lib32ncurses5-dev
+lib32tinfo-dev
+lib32tinfo5
+lib32z1
+lib32z1-dev
+
 #guis
 gnucash
 nautilus-open-terminal
@@ -137,6 +169,7 @@ qemu-utils
 virtualbox-guest-source
 docker.io
 vagrant
+vmware-manager
 
 #compression
 unzip
