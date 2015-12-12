@@ -28,10 +28,16 @@ function title {
 function install {
     status=`dpkg-query -W $1 2> /dev/null`
     if [[ "${status:0:23}" == "" ]] ; then
-       echo -e "# INSTALLING: $1" | tee -a ~/install.log
-       sudo apt-get install --yes --install-suggests $1 2>&1 | tee -a ~/install.log >> /dev/null
+        potential=`sudo apt-get install --simulate $1 2> /dev/null`
+        if [[ ! "${potential:81}" == "" ]] ; then # not longer than 81
+            echo -e "# INSTALLING: $1" | tee -a ~/install.log
+            sudo apt-get install --yes --install-suggests $1 2>&1 | tee -a ~/install.log
+	else
+	    echo "# Skip-no-candidate: $1" | tee -a ~/install.log
+	fi
+		
     else
-       echo "# Skip: $1" | tee -a ~/install.log
+        echo "# Skip-already-have: $1" | tee -a ~/install.log
     fi
 }
 

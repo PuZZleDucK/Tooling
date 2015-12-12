@@ -192,6 +192,10 @@ chromium-chromedriver
 mumble
 nmap
 
+#monitoring
+pcp
+pcp-webapi
+
 #games
 steam
 
