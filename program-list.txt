@@ -85,6 +85,12 @@ libsqlite3-dev
 sqlitebrowser
 npm
 mocha
+llvm
+
+#RepRap
+python-serial
+python-wxgtk2.8
+python-pyglet python-tk
 
 #AOSP build
 gnupg
