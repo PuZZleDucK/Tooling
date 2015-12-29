@@ -160,6 +160,7 @@ geany-plugin-webhelper
 nemo
 psensor
 openshot
+kiki
 
 #media
 gstreamer0.10-plugins-ugly
