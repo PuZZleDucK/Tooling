@@ -27,9 +27,10 @@ function title {
 
 function install {
     status=`dpkg-query -W $1 2> /dev/null` # if installed there will be a version number
-#    echo " status:0:23: ${status:0:23}"
+#    echo " status: ${status}"
 #    echo " status2: ${#status}"
-#    echo "    pkg2: $((${#1}+1))"
+#    echo "    cmd2: $((${#1}+1))"
+#        potential=`sudo apt-get install --simulate $1 2> /dev/null`
     if [[ "${#status}" == "$((${#1}+1))" ]] ; then # package is avaliable and uninstalled
         echo -e "# INSTALLING: $1" | tee -a ~/install.log
         sudo apt-get install --yes --force-yes --install-suggests $1 2>&1 | tee -a ~/install.log
@@ -40,18 +41,6 @@ function install {
             echo "# Skip-installed: $1" | tee -a ~/install.log
 	fi    
     fi
-
-#    if [[ "${status:0:23}" == "" ]] ; then # if installed there will be a version number
-#        potential=`sudo apt-get install --simulate $1 2> /dev/null`
-#        if [[ ! "${potential:81}" == "" ]] ; then # not longer than 81
-#            echo -e "# INSTALLING: $1" | tee -a ~/install.log
-#            sudo apt-get install --yes --install-suggests $1 2>&1 | tee -a ~/install.log
-#        else
-#	    echo "# Skip-no-candidate: $1" | tee -a ~/install.log
-#        fi
-#    else
-#        echo "# Skip-already-have: $1" | tee -a ~/install.log
-#    fi
 }
 
 
