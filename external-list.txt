@@ -1,0 +1,4 @@
+
+# Netbeans 8.1 script
+http://download.netbeans.org/netbeans/8.1/final/bundles/netbeans-8.1-linux.sh
+
