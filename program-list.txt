@@ -86,6 +86,11 @@ sqlitebrowser
 npm
 mocha
 llvm
+llvm-3.5
+llvm-3.4
+i2c-tools
+unetbootin
+libusb-dev
 
 #RepRap
 python-serial
@@ -205,4 +210,11 @@ pcp-webapi
 
 #games
 steam
+
+#AV
+gstreamer0.10-dvswitch
+dvsink
+dvsource
+dvswitch
+mediainfo
 
